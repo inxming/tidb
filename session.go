@@ -645,6 +645,7 @@ func (s *session) SetProcessInfo(sql string) {
 }
 
 func (s *session) Execute(sql string) ([]ast.RecordSet, error) {
+	log.Infof("[YUSP] %s", sql)
 	s.PrepareTxnCtx()
 	startTS := time.Now()
 
